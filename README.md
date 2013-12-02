@@ -2,7 +2,7 @@
 ==========
 MinePlus is a toolbox for multiplayer servers running automated mines. 
 
-The plugin lets you:
+MinePlus lets you:
 
 * Have automated mines that reset on a timer and or when they have X% of blocks left.
 * Add a custom block ratio - all materials supported
@@ -13,4 +13,10 @@ The plugin lets you:
 * Messages customizable
 * Automated plugin updater
 
- 
+Compiling
+---------
+We use the NetBeans IDE to write our code. To compile you will need to import the project into a IDE with java7.
+
+Contributing
+------------
+We happily accept contributions, especially through pull requests on GitHub. Submissions must be licensed under the GNU General Public License v3.
