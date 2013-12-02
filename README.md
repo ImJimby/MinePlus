@@ -1,3 +1,2 @@
-MinePlus
-========
-Plugin for prison servers to manage mines.
+![MinePlus](http://i.imgur.com/VLUwAb3.png)
+==========
