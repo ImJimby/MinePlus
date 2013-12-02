@@ -1,0 +1,8 @@
+name: MinePlus
+version: 0.5
+description: Plugin for prison servers to manage mines.
+authors: [Harry5573]
+prefix: MinePlusLog
+load: POSTWORLD
+website: www.arkhamnetwork.org
+main: com.harry5573.mine.MinePlugin
