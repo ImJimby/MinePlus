@@ -15,7 +15,7 @@ MinePlus lets you:
 
 Compiling
 ---------
-We use the NetBeans IDE to write our code. To compile you will need to import the project into a IDE with java7.
+We use the NetBeans IDE to write our code. To compile you will need to import the project into a IDE with Java7 to compile.
 
 Contributing
 ------------
