@@ -29,4 +29,4 @@ Plugin Dependencies
 Plugin Usage
 ------------
 Commands and Permissions:
-* /mine create <name> - Creates a mine with your WorldEdit selection
+* /mine create <name> - Creates a mine with your WorldEdit selection (Permission: mine.admin)
