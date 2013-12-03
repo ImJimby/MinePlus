@@ -20,3 +20,13 @@ We use the NetBeans IDE to write our code. To compile you will need to import th
 Contributing
 ------------
 We happily accept contributions, especially through pull requests on GitHub. Submissions must be licensed under the GNU General Public License v3.
+
+
+Plugin Dependencies
+------------
+* WorldEdit 
+
+Plugin Usage
+------------
+Commands and Permissions:
+* /mine create <name> - Creates a mine with your WorldEdit selection
