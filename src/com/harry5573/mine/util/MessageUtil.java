@@ -13,21 +13,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine.storage;
+package com.harry5573.mine.util;
 
-import com.harry5573.mine.enums.MessageEnum.MessageType;
-import com.harry5573.mine.mines.Mine;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import org.bukkit.ChatColor;
 
 /**
  *
  * @author Harry5573
  */
-public class DataStore {
+public class MessageUtil {
 
-    public static List<Mine> mines = new ArrayList<>();
-    
-    public static HashMap<MessageType, String> messages = new HashMap<>();
+    public static String translateToColorCode(String msg) {
+        return ChatColor.translateAlternateColorCodes('&', msg);
+    }
 }

@@ -1,0 +1,15 @@
+################################################
+#                 MinePlus                     #
+#                                              #
+#            Plugin Developed by               #
+#                 Harry5573                    #
+#                                              #
+#                                              #
+#          http://arkhamnetwork.org            #
+#                                              #
+################################################
+#
+# Mine Message Configuration
+#
+messages:
+  prefix: '&f[&6Mine&2Plus&f]'

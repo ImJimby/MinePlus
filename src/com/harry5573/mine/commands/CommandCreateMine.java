@@ -48,7 +48,13 @@ public class CommandCreateMine extends MinePlusCommand {
         }
         Player player = (Player) sender;
 
-        player.sendMessage(this.getHelp());
+        if (args.length != 3) {
+            player.sendMessage(this.getHelp());
+            return;
+        }
+        
+        
+        
     }
 
     @Override
@@ -57,8 +63,6 @@ public class CommandCreateMine extends MinePlusCommand {
             Logger.log(LogType.NORMAL, "Not a console command!");
         }
         Player player = (Player) sender;
-
-        
-        
+        player.sendMessage(this.getHelp());
     }
 }

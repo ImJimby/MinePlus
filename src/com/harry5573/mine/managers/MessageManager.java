@@ -13,21 +13,31 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine.storage;
+package com.harry5573.mine.managers;
 
+import com.harry5573.mine.MinePlusPlugin;
+import com.harry5573.mine.enums.MessageEnum;
 import com.harry5573.mine.enums.MessageEnum.MessageType;
-import com.harry5573.mine.mines.Mine;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import com.harry5573.mine.storage.DataStore;
+import com.harry5573.mine.util.MessageUtil;
 
 /**
  *
  * @author Harry5573
  */
-public class DataStore {
+public class MessageManager {
 
-    public static List<Mine> mines = new ArrayList<>();
+    MinePlusPlugin plugin;
     
-    public static HashMap<MessageType, String> messages = new HashMap<>();
+    public MessageManager(MinePlusPlugin instance) {
+        this.plugin = instance;
+    }
+    
+    /**
+     * Loads all the messages into the HashMap
+     */
+    public void load() {
+        DataStore.messages.put(MessageType.PREFIX, MessageUtil.translateToColorCode(plugin.cfManager.getMessagesConfig().getString("messages.prefix")));
+    }
+    
 }

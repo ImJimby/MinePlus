@@ -22,6 +22,8 @@ import com.harry5573.mine.log.Logger;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 /**
  *
@@ -30,23 +32,42 @@ import java.util.List;
 public class ConfigManager {
 
     MinePlusPlugin plugin;
-    
     private File mineFolder;
-    
+    private FileConfiguration messagesConfig = null;
+    private File messagesConfigFile = null;
+
     public ConfigManager(MinePlusPlugin instance) {
         this.plugin = instance;
         this.mineFolder = new File(plugin.getDataFolder() + File.separator + "Mines");
     }
-    
+
     /**
      * Called when we want to load everything
      */
     public void load() {
         plugin.saveDefaultConfig();
-        
+
         this.checkMineFolder();
+
+        if (messagesConfigFile == null) {
+            messagesConfigFile = new File(plugin.getDataFolder(), "messages.yml");
+        }
+
+        messagesConfig = YamlConfiguration.loadConfiguration(messagesConfigFile);
     }
 
+    /**
+     * Reloads all the needed configurations
+     */
+    public void reload() {
+        plugin.reloadConfig();
+
+        messagesConfig = YamlConfiguration.loadConfiguration(messagesConfigFile);
+    }
+
+    /**
+     * Checks that the mines folder exixts
+     */
     private void checkMineFolder() {
         if (!mineFolder.exists()) {
             Logger.log(LogType.DEBUG, "Mine folder did not exist... Creating!");
@@ -54,28 +75,39 @@ public class ConfigManager {
             Logger.log(LogType.DEBUG, "Mine folder created successfuly");
         }
     }
-    
+
     /**
      * Returns a list of all the mine configurations
-     * @return 
+     *
+     * @return
      */
     public List<File> getListOfMineConfigs() {
-        List<File>returnme = new ArrayList<>();
-        
+        List<File> returnme = new ArrayList<>();
+
         for (File file : mineFolder.listFiles()) {
             if (file.getName().contains(".yml")) {
                 returnme.add(file);
             }
         }
-        
+
         return returnme;
     }
-    
+
     /**
      * Returns the plugins version
-     * @return 
+     *
+     * @return
      */
     public String getVersion() {
         return plugin.getDescription().getVersion();
+    }
+
+    /**
+     * Returns the FileConfiguration of the messages config
+     *
+     * @return
+     */
+    public FileConfiguration getMessagesConfig() {
+        return this.messagesConfig;
     }
 }

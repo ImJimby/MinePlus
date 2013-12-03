@@ -13,21 +13,19 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine.storage;
-
-import com.harry5573.mine.enums.MessageEnum.MessageType;
-import com.harry5573.mine.mines.Mine;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+package com.harry5573.mine.enums;
 
 /**
  *
  * @author Harry5573
  */
-public class DataStore {
+public class MessageEnum {
 
-    public static List<Mine> mines = new ArrayList<>();
+    /**
+     * Enum to grab messages easily
+     */
+    public static enum MessageType {
+        PREFIX
+    }
     
-    public static HashMap<MessageType, String> messages = new HashMap<>();
 }
