@@ -1,0 +1,17 @@
+################################################
+#                 MinePlus                     #
+#                                              #
+#            Plugin Developed by               #
+#                 Harry5573                    #
+#                                              #
+#                                              #
+#          http://arkhamnetwork.org            #
+#                                              #
+################################################
+
+# Dont touch this.
+config-version: 1
+
+# Should we enable debug messages?
+debug: true
+

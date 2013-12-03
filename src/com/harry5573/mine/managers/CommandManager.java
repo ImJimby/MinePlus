@@ -13,18 +13,30 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine.enums;
+package com.harry5573.mine.managers;
+
+import com.harry5573.mine.MinePlusPlugin;
+import com.harry5573.mine.commands.MinePlusCommandHandler;
 
 /**
  *
  * @author Harry5573
  */
-public class LoggerEnum {
+public class CommandManager {
 
+    MinePlusPlugin plugin;
+    
+    public CommandManager(MinePlusPlugin instance) {
+        this.plugin = instance;
+    }
+    
     /**
-     * Simple enum to determin log type
+     * Registers all the commands
      */
-    public static enum LogType {
-        NORMAL, DEBUG, SEVERE
+    public void registerCommands() {
+        MinePlusCommandHandler handler = new MinePlusCommandHandler(plugin);
+        plugin.getCommand("mine").setExecutor(handler);
+        
+       // handler.registerCommand("join", new CommandJoin(this));
     }
 }

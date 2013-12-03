@@ -13,18 +13,22 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine.enums;
+package com.harry5573.mine.mines;
+
+import com.harry5573.mine.MinePlusPlugin;
 
 /**
  *
  * @author Harry5573
  */
-public class LoggerEnum {
+public class MineUtils {
 
-    /**
-     * Simple enum to determin log type
-     */
-    public static enum LogType {
-        NORMAL, DEBUG, SEVERE
+    MinePlusPlugin plugin;
+    
+    public MineUtils(MinePlusPlugin instance) {
+        this.plugin = instance;
     }
+    
+    
+    
 }

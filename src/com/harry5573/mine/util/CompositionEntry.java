@@ -13,26 +13,29 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine;
+package com.harry5573.mine.util;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import com.harry5573.mine.mines.MineBlock;
 
 /**
  *
  * @author Harry5573
  */
-public class MinePlugin extends JavaPlugin {
+public class CompositionEntry {
 
-    public static MinePlugin plugin;
-    
-    @Override
-    public void onEnable() {
-        
+    private MineBlock block;
+    private double chance;
+
+    public CompositionEntry(MineBlock block, double chance) {
+        this.block = block;
+        this.chance = chance;
     }
-    
-    @Override
-    public void onDisable() {
-        
+
+    public MineBlock getBlock() {
+        return block;
     }
-    
+
+    public double getChance() {
+        return chance;
+    }
 }

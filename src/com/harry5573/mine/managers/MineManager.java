@@ -13,30 +13,37 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package com.harry5573.mine.log;
+package com.harry5573.mine.managers;
 
 import com.harry5573.mine.MinePlusPlugin;
+import com.harry5573.mine.enums.LoggerEnum;
 import com.harry5573.mine.enums.LoggerEnum.LogType;
+import com.harry5573.mine.log.Logger;
+import java.io.File;
 
 /**
  *
  * @author Harry5573
  */
-public class Logger {
+public class MineManager {
+
+    MinePlusPlugin plugin;
+
+    public MineManager(MinePlusPlugin instance) {
+        this.plugin = instance;
+    }
 
     /**
-     * Simple method to manage internal logging
-     *
-     * @param type
-     * @param message
+     * Attempts to load all the Mines
      */
-    public static void log(LogType type, String message) {
-        if (type == LogType.NORMAL) {
-            MinePlusPlugin.inst().getServer().getLogger().info(message);
-        } else if (type == LogType.DEBUG && MinePlusPlugin.inst().getConfig().getBoolean("debug")) {
-            MinePlusPlugin.inst().getServer().getLogger().info("[DEBUG] " + message);
-        } else if (type == LogType.SEVERE) {
-            MinePlusPlugin.inst().getServer().getLogger().info("[SEVERE] " + message);
+    public void loadMines() {
+        for (File mineConfig : plugin.cfManager.getListOfMineConfigs()) {
+            Logger.log(LogType.DEBUG, "Attempting to load mine " + mineConfig.getName().replaceAll(".yml", null));
+            this.loadMine(mineConfig.getName().replaceAll(".yml", null));
         }
+    }
+    
+    public void loadMine(String name) {
+        
     }
 }
